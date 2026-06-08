@@ -1,0 +1,160 @@
+.experience-section {
+  position: relative;
+  z-index: 10;
+}
+
+.experience-card {
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--glass-border-dark);
+}
+.light-mode .experience-card {
+  border: 1px solid var(--glass-border-light);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--glass-border-dark);
+}
+.light-mode .experience-header {
+  border-bottom: 1px solid var(--glass-border-light);
+}
+
+.role-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.role-title h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.role-title h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-text-dark);
+}
+.light-mode .role-title h4 {
+  color: var(--clr-text-light);
+}
+
+.text-muted {
+  color: var(--clr-text-dark-muted);
+  font-weight: 500;
+}
+.light-mode .text-muted {
+  color: var(--clr-text-light-muted);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: var(--clr-primary-400);
+  margin-bottom: 1.25rem;
+}
+.light-mode .project-title {
+  color: var(--clr-primary-600);
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.achievement-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--clr-text-dark-muted);
+  line-height: 1.5;
+}
+.light-mode .achievement-list li {
+  color: var(--clr-text-light-muted);
+}
+
+.achievement-list li svg {
+  color: var(--clr-accent-emerald);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.tech-stack-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  border: 1px solid var(--glass-border-dark);
+}
+.light-mode .tech-stack-box {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid var(--glass-border-light);
+}
+
+.tech-stack-box h5 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--clr-text-dark);
+}
+.light-mode .tech-stack-box h5 {
+  color: var(--clr-text-light);
+}
+
+.tech-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--clr-text-dark-muted);
+}
+.light-mode .tech-item {
+  color: var(--clr-text-light-muted);
+}
+
+.tech-item strong {
+  color: var(--clr-text-dark);
+}
+.light-mode .tech-item strong {
+  color: var(--clr-text-light);
+}
+
+.tech-item svg {
+  color: var(--clr-primary-400);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.light-mode .tech-item svg {
+  color: var(--clr-primary-600);
+}
+
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

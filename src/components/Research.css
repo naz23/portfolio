@@ -1,0 +1,60 @@
+.research-section {
+  position: relative;
+  z-index: 10;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.research-card {
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--clr-primary-500);
+}
+
+.research-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+.light-mode .research-icon {
+  background: var(--clr-primary-50);
+}
+
+.research-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.research-card p {
+  color: var(--clr-text-dark-muted);
+  flex-grow: 1;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.light-mode .research-card p {
+  color: var(--clr-text-light-muted);
+}
+
+.research-btn {
+  align-self: flex-start;
+  width: auto;
+}
