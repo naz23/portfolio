@@ -98,6 +98,9 @@
 @media (max-width: 768px) {
   .desktop-only { display: none; }
   .mobile-only { display: block; }
+  .nav-content {
+    flex-direction: row-reverse;
+  }
 }
 
 .mobile-menu-btn {

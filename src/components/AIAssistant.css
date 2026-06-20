@@ -31,7 +31,7 @@
   width: 350px;
   height: 500px;
   max-height: calc(100vh - 120px);
-  background: var(--glass-bg);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border-dark);
@@ -46,6 +46,7 @@
 }
 
 .light-mode .ai-chat-window {
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--glass-border-light);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
@@ -214,15 +215,25 @@
   40% { transform: scale(1); }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .ai-chat-window {
-    width: calc(100vw - 2rem);
-    height: 400px;
-    right: 1rem;
-    bottom: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    border-radius: 0;
+    border: none;
   }
+
   .ai-assistant-wrapper {
     bottom: 1rem;
     right: 1rem;
+    z-index: 10000;
   }
 }
