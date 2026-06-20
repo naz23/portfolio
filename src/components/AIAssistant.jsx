@@ -29,13 +29,13 @@ const AIAssistant = () => {
 
     try {
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      
+
       if (!apiKey) {
         throw new Error("API key is missing. Please add VITE_GEMINI_API_KEY to your .env file.");
       }
 
       const genAI = new GoogleGenerativeAI(apiKey);
-      
+
       const modelName = import.meta.env.VITE_AI_MODEL || "gemini-3.1-flash-lite";
       const model = genAI.getGenerativeModel({
         model: modelName,
@@ -68,16 +68,16 @@ const AIAssistant = () => {
 
     } catch (error) {
       console.error("AI Assistant Error:", error);
-      
+
       const errorMsg = error.message.toLowerCase();
       const isRateLimit = errorMsg.includes('429') || errorMsg.includes('quota') || errorMsg.includes('rate limit');
-      
-      let friendlyError = isRateLimit 
+
+      let friendlyError = isRateLimit
         ? "Oops! I'm experiencing unusually high traffic right now. Please try again in a moment, or contact Nazrin directly at mnazrinnapiah@gmail.com."
         : `Oops! I seem to have lost connection to my neural network. \n\n**Error Details:** ${error.message}\n\nPlease try again later or contact Nazrin directly at mnazrinnapiah@gmail.com.`;
 
-      setMessages(prev => [...prev, { 
-        role: 'model', 
+      setMessages(prev => [...prev, {
+        role: 'model',
         content: friendlyError
       }]);
     } finally {
@@ -95,10 +95,10 @@ const AIAssistant = () => {
             </div>
             <div className="ai-header-info">
               <h3>NZ</h3>
-              <p>Powered by Gemini 3.1 Flash Lite</p>
+              <p>AI Assistant</p>
             </div>
-            <button 
-              onClick={() => setIsOpen(false)} 
+            <button
+              onClick={() => setIsOpen(false)}
               style={{ marginLeft: 'auto', background: 'transparent', border: 'none', color: 'inherit', cursor: 'pointer' }}
             >
               <X size={20} />
@@ -126,10 +126,10 @@ const AIAssistant = () => {
           </div>
 
           <form className="ai-chat-input-area" onSubmit={handleSend}>
-            <input 
-              type="text" 
-              className="ai-chat-input" 
-              placeholder="Ask me anything..." 
+            <input
+              type="text"
+              className="ai-chat-input"
+              placeholder="Ask me anything..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={isLoading}
